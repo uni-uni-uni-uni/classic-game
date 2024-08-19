@@ -1,0 +1,22 @@
+body{
+    background-color: azure;
+}
+h1{
+    text-align: center;
+}
+
+#field{
+    background-color: #FEFEFE;
+    border:1px black solid;
+    width:540px;
+    height:360px;
+    margin:auto;
+}
+
+#ball{
+    background-color: #278cff;
+    border:1px black solid;
+    width:20px;
+    height:20px;
+	border-radius:50%;
+}
