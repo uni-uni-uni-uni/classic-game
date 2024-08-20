@@ -1,22 +1,40 @@
 body{
     background-color: azure;
 }
+
 h1{
+    color: #fff;
     text-align: center;
+    text-shadow: 2px 2px 0 #000, -1px 1px 0 #000, 1px -1px 0 #000, -1px -1px 0 #000;
+}
+
+.date{
+    color: #00e1ff;
 }
 
 #field{
-    background-color: #FEFEFE;
-    border:1px black solid;
+    position:relative;
+    margin:auto;
     width:540px;
     height:360px;
-    margin:auto;
+    border:1px black solid;
+    background-color: #FEFEFE;
 }
 
 #ball{
-    background-color: #278cff;
-    border:1px black solid;
+    position:absolute;
     width:20px;
     height:20px;
+    border:1px black solid;
 	border-radius:50%;
+    background-color: #00e1ff;
+    bottom:0px;
+}
+
+.block{
+    position:absolute;
+    border:1px black solid;
+    background-color: #70d8e6;
+    border-radius: 3px;
+    box-shadow: 2px 2px 0px 0px rgba(0, 0, 0, 0.4);
 }
