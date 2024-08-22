@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            background-color: #fff9e8;
+        }
+        div{
+            user-select: none;
+        }
+        h1 {
+            color: #fff;
+            text-align: center;
+            text-shadow: 2px 2px 0 #000, -1px 1px 0 #000, 1px -1px 0 #000, -1px -1px 0 #000;
+        }
+        #field{
+            position:relative;
+            margin:auto;
+            width:620px;
+            height:360px;
+            border:1px black solid;
+            background-color: #FEFEFE;
+        }
+        #field div{
+            position:absolute;
+            width:60px;
+            height:60px;
+            border:1px black solid;
+            background-color: #FEFEFE;
+            display: grid;
+            place-items: center;
+            font-size: 42px;
+            color: #fff;
+            text-shadow: 1px 1px 0 #000, -1px 1px 0 #000, 1px -1px 0 #000, -1px -1px 0 #000;
+        }
+        .flex-container {
+            display: flex;
+            /* font-family: Consolas, Arial, sans-serif; */
+        }
+        .center{
+            position:relative;
+            margin: 5px auto;
+        }
+        .history{
+            margin: 30px auto 0px auto;
+            background-color: #FEFEFE;
+            border:1px black solid;
+        }
+        .history > h3{
+            margin: 0px 0px;
+            text-align: center;
+        }
+        .history > div{
+            margin: 5px;
+            padding: 10px;
+            background-color: #ffeab5;
+        }
+        .history > div > p{
+            margin: 0px;
+        }
+    </style>
+    <title>Anagram Helper</title>
+</head>
+
+<body>
+    <h1>Anagram Helper</h1>
+    
+    <div class="flex-container center" style="width: 300px;">
+        <input id="textArea" type="text" style="flex:1;" value="あいうえお">
+        <button id="createBtn">Create</button>
+    </div>
+    <div id="field">
+
+    </div>
+    <div class="center history" style="width: 700px;">
+        <h3>来歴</h3>
+        <div>
+            <p>2024/08/24</p>
+            <li>試作した</li>
+            <li>１０文字以上入れても改行しない</li>
+            <li>絵文字未対応</li>
+        </div>
+    </div>
+
+    <script src="js/common.js"></script>
+    <script>
+        createBtn.addEventListener('click', (e)=>{
+            while (field.firstChild) {
+                field.removeChild(field.firstChild);
+            }
+
+            const str = textArea.value;
+            str.split("").forEach((char, i) => {
+                // 生成
+                const card = document.createElement('div');
+                card.innerText = char;
+                card.classList.add("wrap-pattern")
+                field.append(card)
+                
+                // 配置
+                setLeftOf(card, i * card.offsetWidth)
+                
+                // 操作可能化
+                card.onpointermove = function(event){
+                    if(event.buttons){
+                        this.style.left     = this.offsetLeft + event.movementX + 'px'
+                        this.style.top      = this.offsetTop  + event.movementY + 'px'
+                        this.style.position = 'absolute'
+                        this.draggable      = false
+                        this.setPointerCapture(event.pointerId)
+                    }
+                }
+            });
+
+            textArea.value = "";
+        });
+
+    </script>
+</body>
+</html>
