@@ -1,5 +1,5 @@
 body{
-    background-color: azure;
+    background-color: #ccf2ff;
 }
 
 h1{
@@ -8,38 +8,181 @@ h1{
     text-shadow: 2px 2px 0 #000, -1px 1px 0 #000, 1px -1px 0 #000, -1px -1px 0 #000;
 }
 
-.date{
-    color: #1b3ff2;
+.info-area{
+    /* display: none; */
+    position:absolute;
+    --padding:25px;
+    left:var(--padding);
+    top:var(--padding);
+    width:calc(100% - var(--padding) * 2 - 2px);
+    height:calc(100% - var(--padding) * 2 - 2px);
+
+    background-color: #00bfffEE;
+    border:1px black solid;
+	border-radius:5px;
+    z-index: 1;
+
+    text-align: center;
+    color: #fff;
+}
+.info-area p:nth-child(1){
+    font-size:30px;
+    margin:30px 0px 10px 0px;
+}
+.info-area p{
+    font-size:20px;
+    margin:0px;
 }
 
-#field{
+#start{
+    /* 特になし */
+}
+ 
+#gameover{
+    display: none;
+    background-color: #555555dd;
+}
+ 
+#clear{
+    display: none;
+}
+
+.start-button{
+    appearance: none;
+    border: 0;
+    border-radius: 5px;
+    background: #0099cc;
+    color: #fff;
+    padding: 8px 30px;
+    margin:30px 0px 0px 0px;
+    font-size: 20px;
+}
+.start-button:hover{
+    background: #007399 ;
+}
+
+#base{
     position:relative;
     margin:auto;
     width:540px;
     height:360px;
+}
+
+#field{
+    width:100%;
+    height:100%;
     border:1px black solid;
-    background-color: #FEFEFE;
+    background-color: #fff;
 }
 
 #ball{
     position:absolute;
+}
+
+.ball{
     border:1px black solid;
-    background-color: #10e0cf;
+    background-color: #66d9ff;
 	border-radius:50%;
-    bottom:0px;
 }
 
 #bar{
     position:absolute;
     border:1px black solid;
-    background-color: #ff7b00;
-    bottom:0px;
+    background-color: #ff6633;
+}
+
+#life{
+    position:absolute;
+    display: flex
 }
 
 .block{
     position:absolute;
     border:1px black solid;
-    background-color: #70d8e6;
+    background-color: #33ccff ;
     border-radius:3px;
     box-shadow:2px 2px 0px 0px rgba(0, 0, 0, 0.4);
 }
+
+
+
+
+#ball::after{
+    content: "";
+    transform-origin: 0.5px 0.5px;
+    position:absolute;
+    --x:1;
+    rotate: calc(var(--x) * 1deg);
+    left:9.5px;
+    top:9.5px;
+    /* display:block; */
+    display:none;
+    width:50px;
+    height:10px;
+    border-top:2px red solid;
+}
+#ball[angle='0']::after{--x:90;}#ball[angle='1']::after{--x:89;}#ball[angle='2']::after{--x:88;}#ball[angle='3']::after{--x:87;}#ball[angle='4']::after{--x:86;}#ball[angle='5']::after{--x:85;}#ball[angle='6']::after{--x:84;}#ball[angle='7']::after{--x:83;}#ball[angle='8']::after{--x:82;}#ball[angle='9']::after{--x:81;}
+#ball[angle='10']::after{--x:80;}#ball[angle='11']::after{--x:79;}#ball[angle='12']::after{--x:78;}#ball[angle='13']::after{--x:77;}#ball[angle='14']::after{--x:76;}#ball[angle='15']::after{--x:75;}#ball[angle='16']::after{--x:74;}#ball[angle='17']::after{--x:73;}#ball[angle='18']::after{--x:72;}#ball[angle='19']::after{--x:71;}
+#ball[angle='20']::after{--x:70;}#ball[angle='21']::after{--x:69;}#ball[angle='22']::after{--x:68;}#ball[angle='23']::after{--x:67;}#ball[angle='24']::after{--x:66;}#ball[angle='25']::after{--x:65;}#ball[angle='26']::after{--x:64;}#ball[angle='27']::after{--x:63;}#ball[angle='28']::after{--x:62;}#ball[angle='29']::after{--x:61;}
+#ball[angle='30']::after{--x:60;}#ball[angle='31']::after{--x:59;}#ball[angle='32']::after{--x:58;}#ball[angle='33']::after{--x:57;}#ball[angle='34']::after{--x:56;}#ball[angle='35']::after{--x:55;}#ball[angle='36']::after{--x:54;}#ball[angle='37']::after{--x:53;}#ball[angle='38']::after{--x:52;}#ball[angle='39']::after{--x:51;}
+#ball[angle='40']::after{--x:50;}#ball[angle='41']::after{--x:49;}#ball[angle='42']::after{--x:48;}#ball[angle='43']::after{--x:47;}#ball[angle='44']::after{--x:46;}#ball[angle='45']::after{--x:45;}#ball[angle='46']::after{--x:44;}#ball[angle='47']::after{--x:43;}#ball[angle='48']::after{--x:42;}#ball[angle='49']::after{--x:41;}
+#ball[angle='50']::after{--x:40;}#ball[angle='51']::after{--x:39;}#ball[angle='52']::after{--x:38;}#ball[angle='53']::after{--x:37;}#ball[angle='54']::after{--x:36;}#ball[angle='55']::after{--x:35;}#ball[angle='56']::after{--x:34;}#ball[angle='57']::after{--x:33;}#ball[angle='58']::after{--x:32;}#ball[angle='59']::after{--x:31;}
+#ball[angle='60']::after{--x:30;}#ball[angle='61']::after{--x:29;}#ball[angle='62']::after{--x:28;}#ball[angle='63']::after{--x:27;}#ball[angle='64']::after{--x:26;}#ball[angle='65']::after{--x:25;}#ball[angle='66']::after{--x:24;}#ball[angle='67']::after{--x:23;}#ball[angle='68']::after{--x:22;}#ball[angle='69']::after{--x:21;}
+#ball[angle='70']::after{--x:20;}#ball[angle='71']::after{--x:19;}#ball[angle='72']::after{--x:18;}#ball[angle='73']::after{--x:17;}#ball[angle='74']::after{--x:16;}#ball[angle='75']::after{--x:15;}#ball[angle='76']::after{--x:14;}#ball[angle='77']::after{--x:13;}#ball[angle='78']::after{--x:12;}#ball[angle='79']::after{--x:11;}
+#ball[angle='80']::after{--x:10;}#ball[angle='81']::after{--x:9;}#ball[angle='82']::after{--x:8;}#ball[angle='83']::after{--x:7;}#ball[angle='84']::after{--x:6;}#ball[angle='85']::after{--x:5;}#ball[angle='86']::after{--x:4;}#ball[angle='87']::after{--x:3;}#ball[angle='88']::after{--x:2;}#ball[angle='89']::after{--x:1;}
+#ball[angle='90']::after{--x:0;}#ball[angle='91']::after{--x:-1;}#ball[angle='92']::after{--x:-2;}#ball[angle='93']::after{--x:-3;}#ball[angle='94']::after{--x:-4;}#ball[angle='95']::after{--x:-5;}#ball[angle='96']::after{--x:-6;}#ball[angle='97']::after{--x:-7;}#ball[angle='98']::after{--x:-8;}#ball[angle='99']::after{--x:-9;}
+#ball[angle='100']::after{--x:-10;}#ball[angle='101']::after{--x:-11;}#ball[angle='102']::after{--x:-12;}#ball[angle='103']::after{--x:-13;}#ball[angle='104']::after{--x:-14;}#ball[angle='105']::after{--x:-15;}#ball[angle='106']::after{--x:-16;}#ball[angle='107']::after{--x:-17;}#ball[angle='108']::after{--x:-18;}#ball[angle='109']::after{--x:-19;}
+#ball[angle='110']::after{--x:-20;}#ball[angle='111']::after{--x:-21;}#ball[angle='112']::after{--x:-22;}#ball[angle='113']::after{--x:-23;}#ball[angle='114']::after{--x:-24;}#ball[angle='115']::after{--x:-25;}#ball[angle='116']::after{--x:-26;}#ball[angle='117']::after{--x:-27;}#ball[angle='118']::after{--x:-28;}#ball[angle='119']::after{--x:-29;}
+#ball[angle='120']::after{--x:-30;}#ball[angle='121']::after{--x:-31;}#ball[angle='122']::after{--x:-32;}#ball[angle='123']::after{--x:-33;}#ball[angle='124']::after{--x:-34;}#ball[angle='125']::after{--x:-35;}#ball[angle='126']::after{--x:-36;}#ball[angle='127']::after{--x:-37;}#ball[angle='128']::after{--x:-38;}#ball[angle='129']::after{--x:-39;}
+#ball[angle='130']::after{--x:-40;}#ball[angle='131']::after{--x:-41;}#ball[angle='132']::after{--x:-42;}#ball[angle='133']::after{--x:-43;}#ball[angle='134']::after{--x:-44;}#ball[angle='135']::after{--x:-45;}#ball[angle='136']::after{--x:-46;}#ball[angle='137']::after{--x:-47;}#ball[angle='138']::after{--x:-48;}#ball[angle='139']::after{--x:-49;}
+#ball[angle='140']::after{--x:-50;}#ball[angle='141']::after{--x:-51;}#ball[angle='142']::after{--x:-52;}#ball[angle='143']::after{--x:-53;}#ball[angle='144']::after{--x:-54;}#ball[angle='145']::after{--x:-55;}#ball[angle='146']::after{--x:-56;}#ball[angle='147']::after{--x:-57;}#ball[angle='148']::after{--x:-58;}#ball[angle='149']::after{--x:-59;}
+#ball[angle='150']::after{--x:-60;}#ball[angle='151']::after{--x:-61;}#ball[angle='152']::after{--x:-62;}#ball[angle='153']::after{--x:-63;}#ball[angle='154']::after{--x:-64;}#ball[angle='155']::after{--x:-65;}#ball[angle='156']::after{--x:-66;}#ball[angle='157']::after{--x:-67;}#ball[angle='158']::after{--x:-68;}#ball[angle='159']::after{--x:-69;}
+#ball[angle='160']::after{--x:-70;}#ball[angle='161']::after{--x:-71;}#ball[angle='162']::after{--x:-72;}#ball[angle='163']::after{--x:-73;}#ball[angle='164']::after{--x:-74;}#ball[angle='165']::after{--x:-75;}#ball[angle='166']::after{--x:-76;}#ball[angle='167']::after{--x:-77;}#ball[angle='168']::after{--x:-78;}#ball[angle='169']::after{--x:-79;}
+#ball[angle='170']::after{--x:-80;}#ball[angle='171']::after{--x:-81;}#ball[angle='172']::after{--x:-82;}#ball[angle='173']::after{--x:-83;}#ball[angle='174']::after{--x:-84;}#ball[angle='175']::after{--x:-85;}#ball[angle='176']::after{--x:-86;}#ball[angle='177']::after{--x:-87;}#ball[angle='178']::after{--x:-88;}#ball[angle='179']::after{--x:-89;}
+#ball[angle='180']::after{--x:-90;}#ball[angle='181']::after{--x:-91;}#ball[angle='182']::after{--x:-92;}#ball[angle='183']::after{--x:-93;}#ball[angle='184']::after{--x:-94;}#ball[angle='185']::after{--x:-95;}#ball[angle='186']::after{--x:-96;}#ball[angle='187']::after{--x:-97;}#ball[angle='188']::after{--x:-98;}#ball[angle='189']::after{--x:-99;}
+#ball[angle='190']::after{--x:-100;}#ball[angle='191']::after{--x:-101;}#ball[angle='192']::after{--x:-102;}#ball[angle='193']::after{--x:-103;}#ball[angle='194']::after{--x:-104;}#ball[angle='195']::after{--x:-105;}#ball[angle='196']::after{--x:-106;}#ball[angle='197']::after{--x:-107;}#ball[angle='198']::after{--x:-108;}#ball[angle='199']::after{--x:-109;}
+#ball[angle='200']::after{--x:-110;}#ball[angle='201']::after{--x:-111;}#ball[angle='202']::after{--x:-112;}#ball[angle='203']::after{--x:-113;}#ball[angle='204']::after{--x:-114;}#ball[angle='205']::after{--x:-115;}#ball[angle='206']::after{--x:-116;}#ball[angle='207']::after{--x:-117;}#ball[angle='208']::after{--x:-118;}#ball[angle='209']::after{--x:-119;}
+#ball[angle='210']::after{--x:-120;}#ball[angle='211']::after{--x:-121;}#ball[angle='212']::after{--x:-122;}#ball[angle='213']::after{--x:-123;}#ball[angle='214']::after{--x:-124;}#ball[angle='215']::after{--x:-125;}#ball[angle='216']::after{--x:-126;}#ball[angle='217']::after{--x:-127;}#ball[angle='218']::after{--x:-128;}#ball[angle='219']::after{--x:-129;}
+#ball[angle='220']::after{--x:-130;}#ball[angle='221']::after{--x:-131;}#ball[angle='222']::after{--x:-132;}#ball[angle='223']::after{--x:-133;}#ball[angle='224']::after{--x:-134;}#ball[angle='225']::after{--x:-135;}#ball[angle='226']::after{--x:-136;}#ball[angle='227']::after{--x:-137;}#ball[angle='228']::after{--x:-138;}#ball[angle='229']::after{--x:-139;}
+#ball[angle='230']::after{--x:-140;}#ball[angle='231']::after{--x:-141;}#ball[angle='232']::after{--x:-142;}#ball[angle='233']::after{--x:-143;}#ball[angle='234']::after{--x:-144;}#ball[angle='235']::after{--x:-145;}#ball[angle='236']::after{--x:-146;}#ball[angle='237']::after{--x:-147;}#ball[angle='238']::after{--x:-148;}#ball[angle='239']::after{--x:-149;}
+#ball[angle='240']::after{--x:-150;}#ball[angle='241']::after{--x:-151;}#ball[angle='242']::after{--x:-152;}#ball[angle='243']::after{--x:-153;}#ball[angle='244']::after{--x:-154;}#ball[angle='245']::after{--x:-155;}#ball[angle='246']::after{--x:-156;}#ball[angle='247']::after{--x:-157;}#ball[angle='248']::after{--x:-158;}#ball[angle='249']::after{--x:-159;}
+#ball[angle='250']::after{--x:-160;}#ball[angle='251']::after{--x:-161;}#ball[angle='252']::after{--x:-162;}#ball[angle='253']::after{--x:-163;}#ball[angle='254']::after{--x:-164;}#ball[angle='255']::after{--x:-165;}#ball[angle='256']::after{--x:-166;}#ball[angle='257']::after{--x:-167;}#ball[angle='258']::after{--x:-168;}#ball[angle='259']::after{--x:-169;}
+#ball[angle='260']::after{--x:-170;}#ball[angle='261']::after{--x:-171;}#ball[angle='262']::after{--x:-172;}#ball[angle='263']::after{--x:-173;}#ball[angle='264']::after{--x:-174;}#ball[angle='265']::after{--x:-175;}#ball[angle='266']::after{--x:-176;}#ball[angle='267']::after{--x:-177;}#ball[angle='268']::after{--x:-178;}#ball[angle='269']::after{--x:-179;}
+#ball[angle='270']::after{--x:-180;}#ball[angle='271']::after{--x:-181;}#ball[angle='272']::after{--x:-182;}#ball[angle='273']::after{--x:-183;}#ball[angle='274']::after{--x:-184;}#ball[angle='275']::after{--x:-185;}#ball[angle='276']::after{--x:-186;}#ball[angle='277']::after{--x:-187;}#ball[angle='278']::after{--x:-188;}#ball[angle='279']::after{--x:-189;}
+#ball[angle='280']::after{--x:-190;}#ball[angle='281']::after{--x:-191;}#ball[angle='282']::after{--x:-192;}#ball[angle='283']::after{--x:-193;}#ball[angle='284']::after{--x:-194;}#ball[angle='285']::after{--x:-195;}#ball[angle='286']::after{--x:-196;}#ball[angle='287']::after{--x:-197;}#ball[angle='288']::after{--x:-198;}#ball[angle='289']::after{--x:-199;}
+#ball[angle='290']::after{--x:-200;}#ball[angle='291']::after{--x:-201;}#ball[angle='292']::after{--x:-202;}#ball[angle='293']::after{--x:-203;}#ball[angle='294']::after{--x:-204;}#ball[angle='295']::after{--x:-205;}#ball[angle='296']::after{--x:-206;}#ball[angle='297']::after{--x:-207;}#ball[angle='298']::after{--x:-208;}#ball[angle='299']::after{--x:-209;}
+#ball[angle='300']::after{--x:-210;}#ball[angle='301']::after{--x:-211;}#ball[angle='302']::after{--x:-212;}#ball[angle='303']::after{--x:-213;}#ball[angle='304']::after{--x:-214;}#ball[angle='305']::after{--x:-215;}#ball[angle='306']::after{--x:-216;}#ball[angle='307']::after{--x:-217;}#ball[angle='308']::after{--x:-218;}#ball[angle='309']::after{--x:-219;}
+#ball[angle='310']::after{--x:-220;}#ball[angle='311']::after{--x:-221;}#ball[angle='312']::after{--x:-222;}#ball[angle='313']::after{--x:-223;}#ball[angle='314']::after{--x:-224;}#ball[angle='315']::after{--x:-225;}#ball[angle='316']::after{--x:-226;}#ball[angle='317']::after{--x:-227;}#ball[angle='318']::after{--x:-228;}#ball[angle='319']::after{--x:-229;}
+#ball[angle='320']::after{--x:-230;}#ball[angle='321']::after{--x:-231;}#ball[angle='322']::after{--x:-232;}#ball[angle='323']::after{--x:-233;}#ball[angle='324']::after{--x:-234;}#ball[angle='325']::after{--x:-235;}#ball[angle='326']::after{--x:-236;}#ball[angle='327']::after{--x:-237;}#ball[angle='328']::after{--x:-238;}#ball[angle='329']::after{--x:-239;}
+#ball[angle='330']::after{--x:-240;}#ball[angle='331']::after{--x:-241;}#ball[angle='332']::after{--x:-242;}#ball[angle='333']::after{--x:-243;}#ball[angle='334']::after{--x:-244;}#ball[angle='335']::after{--x:-245;}#ball[angle='336']::after{--x:-246;}#ball[angle='337']::after{--x:-247;}#ball[angle='338']::after{--x:-248;}#ball[angle='339']::after{--x:-249;}
+#ball[angle='340']::after{--x:-250;}#ball[angle='341']::after{--x:-251;}#ball[angle='342']::after{--x:-252;}#ball[angle='343']::after{--x:-253;}#ball[angle='344']::after{--x:-254;}#ball[angle='345']::after{--x:-255;}#ball[angle='346']::after{--x:-256;}#ball[angle='347']::after{--x:-257;}#ball[angle='348']::after{--x:-258;}#ball[angle='349']::after{--x:-259;}
+#ball[angle='350']::after{--x:-260;}#ball[angle='351']::after{--x:-261;}#ball[angle='352']::after{--x:-262;}#ball[angle='353']::after{--x:-263;}#ball[angle='354']::after{--x:-264;}#ball[angle='355']::after{--x:-265;}#ball[angle='356']::after{--x:-266;}#ball[angle='357']::after{--x:-267;}#ball[angle='358']::after{--x:-268;}#ball[angle='359']::after{--x:-269;}
+
+#ball[angle='90']::after{--x:360;}#ball[angle='91']::after{--x:359;}#ball[angle='92']::after{--x:358;}#ball[angle='93']::after{--x:357;}#ball[angle='94']::after{--x:356;}#ball[angle='95']::after{--x:355;}#ball[angle='96']::after{--x:354;}#ball[angle='97']::after{--x:353;}#ball[angle='98']::after{--x:352;}#ball[angle='99']::after{--x:351;}
+#ball[angle='100']::after{--x:350;}#ball[angle='101']::after{--x:349;}#ball[angle='102']::after{--x:348;}#ball[angle='103']::after{--x:347;}#ball[angle='104']::after{--x:346;}#ball[angle='105']::after{--x:345;}#ball[angle='106']::after{--x:344;}#ball[angle='107']::after{--x:343;}#ball[angle='108']::after{--x:342;}#ball[angle='109']::after{--x:341;}
+#ball[angle='110']::after{--x:340;}#ball[angle='111']::after{--x:339;}#ball[angle='112']::after{--x:338;}#ball[angle='113']::after{--x:337;}#ball[angle='114']::after{--x:336;}#ball[angle='115']::after{--x:335;}#ball[angle='116']::after{--x:334;}#ball[angle='117']::after{--x:333;}#ball[angle='118']::after{--x:332;}#ball[angle='119']::after{--x:331;}
+#ball[angle='120']::after{--x:330;}#ball[angle='121']::after{--x:329;}#ball[angle='122']::after{--x:328;}#ball[angle='123']::after{--x:327;}#ball[angle='124']::after{--x:326;}#ball[angle='125']::after{--x:325;}#ball[angle='126']::after{--x:324;}#ball[angle='127']::after{--x:323;}#ball[angle='128']::after{--x:322;}#ball[angle='129']::after{--x:321;}
+#ball[angle='130']::after{--x:320;}#ball[angle='131']::after{--x:319;}#ball[angle='132']::after{--x:318;}#ball[angle='133']::after{--x:317;}#ball[angle='134']::after{--x:316;}#ball[angle='135']::after{--x:315;}#ball[angle='136']::after{--x:314;}#ball[angle='137']::after{--x:313;}#ball[angle='138']::after{--x:312;}#ball[angle='139']::after{--x:311;}
+#ball[angle='140']::after{--x:310;}#ball[angle='141']::after{--x:309;}#ball[angle='142']::after{--x:308;}#ball[angle='143']::after{--x:307;}#ball[angle='144']::after{--x:306;}#ball[angle='145']::after{--x:305;}#ball[angle='146']::after{--x:304;}#ball[angle='147']::after{--x:303;}#ball[angle='148']::after{--x:302;}#ball[angle='149']::after{--x:301;}
+#ball[angle='150']::after{--x:300;}#ball[angle='151']::after{--x:299;}#ball[angle='152']::after{--x:298;}#ball[angle='153']::after{--x:297;}#ball[angle='154']::after{--x:296;}#ball[angle='155']::after{--x:295;}#ball[angle='156']::after{--x:294;}#ball[angle='157']::after{--x:293;}#ball[angle='158']::after{--x:292;}#ball[angle='159']::after{--x:291;}
+#ball[angle='160']::after{--x:290;}#ball[angle='161']::after{--x:289;}#ball[angle='162']::after{--x:288;}#ball[angle='163']::after{--x:287;}#ball[angle='164']::after{--x:286;}#ball[angle='165']::after{--x:285;}#ball[angle='166']::after{--x:284;}#ball[angle='167']::after{--x:283;}#ball[angle='168']::after{--x:282;}#ball[angle='169']::after{--x:281;}
+#ball[angle='170']::after{--x:280;}#ball[angle='171']::after{--x:279;}#ball[angle='172']::after{--x:278;}#ball[angle='173']::after{--x:277;}#ball[angle='174']::after{--x:276;}#ball[angle='175']::after{--x:275;}#ball[angle='176']::after{--x:274;}#ball[angle='177']::after{--x:273;}#ball[angle='178']::after{--x:272;}#ball[angle='179']::after{--x:271;}
+#ball[angle='180']::after{--x:270;}#ball[angle='181']::after{--x:269;}#ball[angle='182']::after{--x:268;}#ball[angle='183']::after{--x:267;}#ball[angle='184']::after{--x:266;}#ball[angle='185']::after{--x:265;}#ball[angle='186']::after{--x:264;}#ball[angle='187']::after{--x:263;}#ball[angle='188']::after{--x:262;}#ball[angle='189']::after{--x:261;}
+#ball[angle='190']::after{--x:260;}#ball[angle='191']::after{--x:259;}#ball[angle='192']::after{--x:258;}#ball[angle='193']::after{--x:257;}#ball[angle='194']::after{--x:256;}#ball[angle='195']::after{--x:255;}#ball[angle='196']::after{--x:254;}#ball[angle='197']::after{--x:253;}#ball[angle='198']::after{--x:252;}#ball[angle='199']::after{--x:251;}
+#ball[angle='200']::after{--x:250;}#ball[angle='201']::after{--x:249;}#ball[angle='202']::after{--x:248;}#ball[angle='203']::after{--x:247;}#ball[angle='204']::after{--x:246;}#ball[angle='205']::after{--x:245;}#ball[angle='206']::after{--x:244;}#ball[angle='207']::after{--x:243;}#ball[angle='208']::after{--x:242;}#ball[angle='209']::after{--x:241;}
+#ball[angle='210']::after{--x:240;}#ball[angle='211']::after{--x:239;}#ball[angle='212']::after{--x:238;}#ball[angle='213']::after{--x:237;}#ball[angle='214']::after{--x:236;}#ball[angle='215']::after{--x:235;}#ball[angle='216']::after{--x:234;}#ball[angle='217']::after{--x:233;}#ball[angle='218']::after{--x:232;}#ball[angle='219']::after{--x:231;}
+#ball[angle='220']::after{--x:230;}#ball[angle='221']::after{--x:229;}#ball[angle='222']::after{--x:228;}#ball[angle='223']::after{--x:227;}#ball[angle='224']::after{--x:226;}#ball[angle='225']::after{--x:225;}#ball[angle='226']::after{--x:224;}#ball[angle='227']::after{--x:223;}#ball[angle='228']::after{--x:222;}#ball[angle='229']::after{--x:221;}
+#ball[angle='230']::after{--x:220;}#ball[angle='231']::after{--x:219;}#ball[angle='232']::after{--x:218;}#ball[angle='233']::after{--x:217;}#ball[angle='234']::after{--x:216;}#ball[angle='235']::after{--x:215;}#ball[angle='236']::after{--x:214;}#ball[angle='237']::after{--x:213;}#ball[angle='238']::after{--x:212;}#ball[angle='239']::after{--x:211;}
+#ball[angle='240']::after{--x:210;}#ball[angle='241']::after{--x:209;}#ball[angle='242']::after{--x:208;}#ball[angle='243']::after{--x:207;}#ball[angle='244']::after{--x:206;}#ball[angle='245']::after{--x:205;}#ball[angle='246']::after{--x:204;}#ball[angle='247']::after{--x:203;}#ball[angle='248']::after{--x:202;}#ball[angle='249']::after{--x:201;}
+#ball[angle='250']::after{--x:200;}#ball[angle='251']::after{--x:199;}#ball[angle='252']::after{--x:198;}#ball[angle='253']::after{--x:197;}#ball[angle='254']::after{--x:196;}#ball[angle='255']::after{--x:195;}#ball[angle='256']::after{--x:194;}#ball[angle='257']::after{--x:193;}#ball[angle='258']::after{--x:192;}#ball[angle='259']::after{--x:191;}
+#ball[angle='260']::after{--x:190;}#ball[angle='261']::after{--x:189;}#ball[angle='262']::after{--x:188;}#ball[angle='263']::after{--x:187;}#ball[angle='264']::after{--x:186;}#ball[angle='265']::after{--x:185;}#ball[angle='266']::after{--x:184;}#ball[angle='267']::after{--x:183;}#ball[angle='268']::after{--x:182;}#ball[angle='269']::after{--x:181;}
+#ball[angle='270']::after{--x:180;}#ball[angle='271']::after{--x:179;}#ball[angle='272']::after{--x:178;}#ball[angle='273']::after{--x:177;}#ball[angle='274']::after{--x:176;}#ball[angle='275']::after{--x:175;}#ball[angle='276']::after{--x:174;}#ball[angle='277']::after{--x:173;}#ball[angle='278']::after{--x:172;}#ball[angle='279']::after{--x:171;}
+#ball[angle='280']::after{--x:170;}#ball[angle='281']::after{--x:169;}#ball[angle='282']::after{--x:168;}#ball[angle='283']::after{--x:167;}#ball[angle='284']::after{--x:166;}#ball[angle='285']::after{--x:165;}#ball[angle='286']::after{--x:164;}#ball[angle='287']::after{--x:163;}#ball[angle='288']::after{--x:162;}#ball[angle='289']::after{--x:161;}
+#ball[angle='290']::after{--x:160;}#ball[angle='291']::after{--x:159;}#ball[angle='292']::after{--x:158;}#ball[angle='293']::after{--x:157;}#ball[angle='294']::after{--x:156;}#ball[angle='295']::after{--x:155;}#ball[angle='296']::after{--x:154;}#ball[angle='297']::after{--x:153;}#ball[angle='298']::after{--x:152;}#ball[angle='299']::after{--x:151;}
+#ball[angle='300']::after{--x:150;}#ball[angle='301']::after{--x:149;}#ball[angle='302']::after{--x:148;}#ball[angle='303']::after{--x:147;}#ball[angle='304']::after{--x:146;}#ball[angle='305']::after{--x:145;}#ball[angle='306']::after{--x:144;}#ball[angle='307']::after{--x:143;}#ball[angle='308']::after{--x:142;}#ball[angle='309']::after{--x:141;}
+#ball[angle='310']::after{--x:140;}#ball[angle='311']::after{--x:139;}#ball[angle='312']::after{--x:138;}#ball[angle='313']::after{--x:137;}#ball[angle='314']::after{--x:136;}#ball[angle='315']::after{--x:135;}#ball[angle='316']::after{--x:134;}#ball[angle='317']::after{--x:133;}#ball[angle='318']::after{--x:132;}#ball[angle='319']::after{--x:131;}
+#ball[angle='320']::after{--x:130;}#ball[angle='321']::after{--x:129;}#ball[angle='322']::after{--x:128;}#ball[angle='323']::after{--x:127;}#ball[angle='324']::after{--x:126;}#ball[angle='325']::after{--x:125;}#ball[angle='326']::after{--x:124;}#ball[angle='327']::after{--x:123;}#ball[angle='328']::after{--x:122;}#ball[angle='329']::after{--x:121;}
+#ball[angle='330']::after{--x:120;}#ball[angle='331']::after{--x:119;}#ball[angle='332']::after{--x:118;}#ball[angle='333']::after{--x:117;}#ball[angle='334']::after{--x:116;}#ball[angle='335']::after{--x:115;}#ball[angle='336']::after{--x:114;}#ball[angle='337']::after{--x:113;}#ball[angle='338']::after{--x:112;}#ball[angle='339']::after{--x:111;}
+#ball[angle='340']::after{--x:110;}#ball[angle='341']::after{--x:109;}#ball[angle='342']::after{--x:108;}#ball[angle='343']::after{--x:107;}#ball[angle='344']::after{--x:106;}#ball[angle='345']::after{--x:105;}#ball[angle='346']::after{--x:104;}#ball[angle='347']::after{--x:103;}#ball[angle='348']::after{--x:102;}#ball[angle='349']::after{--x:101;}
+#ball[angle='350']::after{--x:100;}#ball[angle='351']::after{--x:99;}#ball[angle='352']::after{--x:98;}#ball[angle='353']::after{--x:97;}#ball[angle='354']::after{--x:96;}#ball[angle='355']::after{--x:95;}#ball[angle='356']::after{--x:94;}#ball[angle='357']::after{--x:93;}#ball[angle='358']::after{--x:92;}#ball[angle='359']::after{--x:91;}
+#ball[angle='360']::after{--x:90;}

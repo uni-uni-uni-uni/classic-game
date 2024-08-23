@@ -17,15 +17,30 @@
     <title>ブロック崩し</title>
 </head>
 <body>
-    <h1>ブロック崩しを作ってみる <span class="date">５日目</span></h1>
+    <h1>ブロック崩しを作ってみた</h1>
 
     <!--ブロック崩しのゲームフィールド -->
-    <div id="field">
 
-        <!-- ボールとなるオブジェクト -->
-        <!-- <div id="ball"></div> -->
-
-
+    <div id="base">
+        <div id="field"></div>
+        <div id="start" class="info-area">
+            <p>遊び方</p>
+            <p>ボールの発射：スペースキー</p>
+            <p>バーの移動：左右キー</p>
+            <button class="start-button">始める</button>
+        </div>
+        <div id="gameover" class="info-area">
+            <p>GAME OVER</p>
+            <p>残念😭</p>
+            <p>もう一度チャレンジしてみよう！</p>
+            <button class="start-button">再挑戦</button>
+        </div>
+        <div id="clear" class="info-area">
+            <p>GAME CLEAR!</p>
+            <p>🎉クリアおめでとう🎉</p>
+            <p>最後まで遊んでくれてありがとう！</p>
+            <button class="start-button">もう一度遊ぶ</button>
+        </div>
     </div>
 
     <script src="js/brickBreaker.js"></script>
