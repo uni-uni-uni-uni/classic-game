@@ -9,7 +9,7 @@ h1{
 }
 
 .date{
-    color: #42c217;
+    color: #1b3ff2;
 }
 
 #field{
@@ -24,8 +24,15 @@ h1{
 #ball{
     position:absolute;
     border:1px black solid;
-    background-color: #00e1ff;
+    background-color: #10e0cf;
 	border-radius:50%;
+    bottom:0px;
+}
+
+#bar{
+    position:absolute;
+    border:1px black solid;
+    background-color: #ff7b00;
     bottom:0px;
 }
 
