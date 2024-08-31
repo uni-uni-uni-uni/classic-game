@@ -1,0 +1,215 @@
+
+h1.title{
+    color: #FFF
+}
+
+.text-edging{
+    text-shadow: 0px 1px 0 #000, 0px -1px 0 #000, 1px 0px 0 #000, -1px 0px 0 #000,
+                 0.707px 0.707px 0 #000, -0.707px 0.707px 0 #000, 0.707px -0.707px 0 #000, -0.707px -0.707px 0 #000;
+}
+
+
+/* * * * * * * * * * * * * * * * * * * * * 
+ * flex
+ * * * * * * * * * * * * * * * * * * * * */
+.flex-container {
+    display: flex;
+}
+.flex-auto {
+    flex: auto;
+}
+
+
+.float-left {
+    float: left;
+}
+
+/* * * * * * * * * * * * * * * * * * * * * 
+ * トゲトゲ
+ * * * * * * * * * * * * * * * * * * * * */
+.togetoge{
+    position: relative;
+    --radius: 50px;   /*　デフォルト 半径 */
+    width: calc(var(--radius) * 2);
+    height: calc(var(--radius) * 2);
+}
+/* 半径は変更可 */
+.togetoge[radius="10"]{--radius: 10px;}
+.togetoge[radius="20"]{--radius: 20px;}
+.togetoge[radius="30"]{--radius: 30px;}
+.togetoge[radius="40"]{--radius: 40px;}
+.togetoge[radius="50"]{--radius: 50px;}
+.togetoge[radius="60"]{--radius: 60px;}
+.togetoge[radius="70"]{--radius: 70px;}
+.togetoge[radius="80"]{--radius: 80px;}
+.togetoge[radius="90"]{--radius: 90px;}
+.togetoge[radius="100"]{--radius: 100px;}
+
+/* 基準線(ただし非表示) */
+.togetoge span{
+    position: absolute;
+    top: 50%; left: 50%;
+
+    width: 1px;
+    height: 50%;
+    /* background-image: linear-gradient(to bottom,green 70%,pink 30%); */
+    /* background-image: linear-gradient(to bottom,black 70%,black 30%); */
+
+    transform-origin: center center;
+    transform: translate(-50%,-50%) rotate(calc(var(--angle) + 15deg)) translateY(calc(var(--radius) * -1));
+}
+
+/* 基準線を30度毎の放射線状に並べる */
+.togetoge span:nth-of-type(1){--angle: calc(360deg / 12 * 0);}
+.togetoge span:nth-of-type(2){--angle: calc(360deg / 12 * 1);}
+.togetoge span:nth-of-type(3){--angle: calc(360deg / 12 * 2);}
+.togetoge span:nth-of-type(4){--angle: calc(360deg / 12 * 3);}
+.togetoge span:nth-of-type(5){--angle: calc(360deg / 12 * 4);}
+.togetoge span:nth-of-type(6){--angle: calc(360deg / 12 * 5);}
+.togetoge span:nth-of-type(7){--angle: calc(360deg / 12 * 6);}
+.togetoge span:nth-of-type(8){--angle: calc(360deg / 12 * 7);}
+.togetoge span:nth-of-type(9){--angle: calc(360deg / 12 * 8);}
+.togetoge span:nth-of-type(10){--angle: calc(360deg / 12 * 9);}
+.togetoge span:nth-of-type(11){--angle: calc(360deg / 12 * 10);}
+.togetoge span:nth-of-type(12){--angle: calc(360deg / 12 * 11);}
+
+ .togetoge span:before{
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+
+    background-image: linear-gradient(to bottom, transparent 57%,black 43%);
+
+    transform-origin: center bottom;
+    transform: rotate(32.5deg);
+}
+.togetoge span:after{
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+
+    background-image: linear-gradient(to bottom,transparent 57%,black 43%);
+
+    transform-origin: center bottom;
+    transform: rotate(-32.5deg);
+}
+
+  .balloon1{
+      position: relative;
+      padding: 20px;
+      width: 80px;
+      height: 80px;
+      line-height: 80px;
+      border-radius: 50%;
+      text-align: center;
+      color: #ffffff;
+      letter-spacing: 0.2em;
+      font-size: 14px;
+      border: 3px #ff9800 solid;
+      background-color: #ff9800;
+  }
+  /* .balloon1::before{
+      content: '';
+      position: absolute;
+      display: block;
+      width: 0;
+      height: 0;
+      left: 2px;
+      bottom: 2px;
+      border-right: 20px solid #ff9800;
+      border-left: 20px solid #ff98FF;
+      border-top: 50px solid red;
+      border-bottom: 10px solid blue;
+      
+      transform: rotate(45deg);
+  } */
+  .balloon1 span{
+      position: absolute;
+      top: calc(50% - 14px); left: calc(50% - 20px);
+
+      width: 0px;
+      height: 0px;
+      --angle: 0deg;
+      transform-origin: center center;
+      transform:  rotate(calc(var(--angle) + 0deg)) translateX(calc(80px * -1));
+
+      border-right: 40px solid #ff9800;
+      /* border-left: 0px solid #ff98FF; */
+      border-top: 15px solid transparent;
+      border-bottom: 15px solid transparent;
+      
+      transition: 3s;
+      z-index: 1;
+  }
+  .balloon1 span:nth-of-type(1){  --angle: 0deg;   }
+  .balloon1 span:nth-of-type(1){  --angle: 30deg;  }
+  .balloon1 span:nth-of-type(3){  --angle: 60deg;  }
+  .balloon1 span:nth-of-type(4){  --angle: 90deg;  }
+  .balloon1 span:nth-of-type(5){  --angle: 120deg; }
+  .balloon1 span:nth-of-type(6){  --angle: 150deg; }
+  .balloon1 span:nth-of-type(7){  --angle: 180deg; }
+  .balloon1 span:nth-of-type(8){  --angle: 210deg; }
+  .balloon1 span:nth-of-type(9){  --angle: 240deg; }
+  .balloon1 span:nth-of-type(10){ --angle: 270deg; }
+  .balloon1 span:nth-of-type(11){ --angle: 300deg; }
+  .balloon1 span:nth-of-type(12){ --angle: 330deg; }
+
+  /* div > div{
+      width: 200px;
+      height: 100px;
+      border: 1px #000 solid;
+  } */
+  .bgtest{
+          background: radial-gradient(
+              100px,
+              white 20% 40%,
+              black 40% 60%,
+              white 60% 80%,
+              black 80%
+          );
+          /* background-clip: text;
+          color: transparent; */
+  }
+  div.bgtest2{
+      background-color: #8be4f0 ;
+      background: linear-gradient(
+          to right,
+          red 20%,
+          orange 20%,
+          yellow 40%,
+          green 60%,
+          blue 80%
+      );
+
+      
+      background: 
+      radial-gradient(circle closest-side, #000 2px, transparent 4px) 0px 0px / 20px 30px,
+      radial-gradient(circle closest-side, transparent 5px, #FFF 7px) 0px 0px / 20px 30px,
+      conic-gradient( 
+          red 0%,
+          orange 20%,
+          yellow 40%,
+          green 60%,
+          blue 80%
+          );
+      /* background-clip: text; */
+      color: transparent;
+      text-shadow: 2px 2px 0 #00000010;
+
+      font-size:40px;
+  }
+  div.bgtest2::before{
+      content:attr(str);
+      position:absolute;
+      /* color: transparent; */
+      text-shadow: 0px 0px 0 #000000,
+          0px 1px 0 #000000,
+          1px 0px 0 #000000,
+          1px 1px 0 #000000,
+          1px 1px 0 #000000,
+          1px 1px 0 #000000;
+      font-size:40px;
+      z-index: -1;
+  }
