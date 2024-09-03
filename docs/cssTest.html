@@ -19,15 +19,32 @@
 
 <body>
     <h1 class="title text-edging">CSSで遊ぼう</h1>
+    
     <p>トゲトゲ出来たよ</p>
-
-    <div>
-        <div class="togetoge float-left" radius="60">
-            <span></span> <span></span> <span></span> <span></span>
-            <span></span> <span></span> <span></span> <span></span>
-            <span></span> <span></span> <span></span> <span></span>
+    <div class="flex-container" style="width:80%;margin: 0px auto;">
+        <div class="float-left" style="width: 100px;border:1px dashed #333;margin-right:5px;">
+            <div>アウトライン</div>
+            <div class="togetoge-line" radius="40">
+                <span></span> <span></span> <span></span> <span></span>
+                <span></span> <span></span> <span></span> <span></span>
+                <span></span> <span></span> <span></span> <span></span>
+            </div>
         </div>
+        <div class="float-left" style="width: 100px;border:1px dashed #333;margin-right:5px;">
+            <div>塗りつぶし</div>
+            <div class="togetoge-fill" radius="40">
+                <span></span> <span></span> <span></span> <span></span>
+                <span></span> <span></span> <span></span> <span></span>
+                <span></span> <span></span> <span></span> <span></span>
+            </div>
+        </div>
+        <!-- <div class="float-left" style="width: 100px;border:1px dashed #333">
+            <div>AI作</div>
+            <div class="spikes"></div>
+        </div> -->
     </div>
+
+    <div class="clear" style="margin-top:30px;">次は何を作ろうか</div>
 
 </body>
 </html>

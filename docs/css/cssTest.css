@@ -23,138 +23,163 @@ h1.title{
 .float-left {
     float: left;
 }
+.clear{
+	clear:both;
+}
 
 /* * * * * * * * * * * * * * * * * * * * * 
- * トゲトゲ
+ * トゲトゲ アウトライン
  * * * * * * * * * * * * * * * * * * * * */
-.togetoge{
+.togetoge-line{
     position: relative;
     --radius: 50px;   /*　デフォルト 半径 */
     width: calc(var(--radius) * 2);
     height: calc(var(--radius) * 2);
 }
 /* 半径は変更可 */
-.togetoge[radius="10"]{--radius: 10px;}
-.togetoge[radius="20"]{--radius: 20px;}
-.togetoge[radius="30"]{--radius: 30px;}
-.togetoge[radius="40"]{--radius: 40px;}
-.togetoge[radius="50"]{--radius: 50px;}
-.togetoge[radius="60"]{--radius: 60px;}
-.togetoge[radius="70"]{--radius: 70px;}
-.togetoge[radius="80"]{--radius: 80px;}
-.togetoge[radius="90"]{--radius: 90px;}
-.togetoge[radius="100"]{--radius: 100px;}
+.togetoge-line[radius="10"]{--radius: 10px;}
+.togetoge-line[radius="20"]{--radius: 20px;}
+.togetoge-line[radius="30"]{--radius: 30px;}
+.togetoge-line[radius="40"]{--radius: 40px;}
+.togetoge-line[radius="50"]{--radius: 50px;}
+.togetoge-line[radius="60"]{--radius: 60px;}
+.togetoge-line[radius="70"]{--radius: 70px;}
+.togetoge-line[radius="80"]{--radius: 80px;}
+.togetoge-line[radius="90"]{--radius: 90px;}
+.togetoge-line[radius="100"]{--radius: 100px;}
 
 /* 基準線(ただし非表示) */
-.togetoge span{
+.togetoge-line span{
     position: absolute;
     top: 50%; left: 50%;
-
-    width: 1px;
     height: 50%;
-    /* background-image: linear-gradient(to bottom,green 70%,pink 30%); */
-    /* background-image: linear-gradient(to bottom,black 70%,black 30%); */
+    width: 1px;
 
     transform-origin: center center;
     transform: translate(-50%,-50%) rotate(calc(var(--angle) + 15deg)) translateY(calc(var(--radius) * -1));
 }
 
 /* 基準線を30度毎の放射線状に並べる */
-.togetoge span:nth-of-type(1){--angle: calc(360deg / 12 * 0);}
-.togetoge span:nth-of-type(2){--angle: calc(360deg / 12 * 1);}
-.togetoge span:nth-of-type(3){--angle: calc(360deg / 12 * 2);}
-.togetoge span:nth-of-type(4){--angle: calc(360deg / 12 * 3);}
-.togetoge span:nth-of-type(5){--angle: calc(360deg / 12 * 4);}
-.togetoge span:nth-of-type(6){--angle: calc(360deg / 12 * 5);}
-.togetoge span:nth-of-type(7){--angle: calc(360deg / 12 * 6);}
-.togetoge span:nth-of-type(8){--angle: calc(360deg / 12 * 7);}
-.togetoge span:nth-of-type(9){--angle: calc(360deg / 12 * 8);}
-.togetoge span:nth-of-type(10){--angle: calc(360deg / 12 * 9);}
-.togetoge span:nth-of-type(11){--angle: calc(360deg / 12 * 10);}
-.togetoge span:nth-of-type(12){--angle: calc(360deg / 12 * 11);}
+.togetoge-line span:nth-of-type(1){--angle: calc(360deg / 12 * 0);}
+.togetoge-line span:nth-of-type(2){--angle: calc(360deg / 12 * 1);}
+.togetoge-line span:nth-of-type(3){--angle: calc(360deg / 12 * 2);}
+.togetoge-line span:nth-of-type(4){--angle: calc(360deg / 12 * 3);}
+.togetoge-line span:nth-of-type(5){--angle: calc(360deg / 12 * 4);}
+.togetoge-line span:nth-of-type(6){--angle: calc(360deg / 12 * 5);}
+.togetoge-line span:nth-of-type(7){--angle: calc(360deg / 12 * 6);}
+.togetoge-line span:nth-of-type(8){--angle: calc(360deg / 12 * 7);}
+.togetoge-line span:nth-of-type(9){--angle: calc(360deg / 12 * 8);}
+.togetoge-line span:nth-of-type(10){--angle: calc(360deg / 12 * 9);}
+.togetoge-line span:nth-of-type(11){--angle: calc(360deg / 12 * 10);}
+.togetoge-line span:nth-of-type(12){--angle: calc(360deg / 12 * 11);}
 
- .togetoge span:before{
+.togetoge-line span:before{
     content: '';
     position: absolute;
     top: 0; left: 0;
     width: 100%; height: 100%;
 
-    background-image: linear-gradient(to bottom, transparent 57%,black 43%);
+    background-image: linear-gradient(to bottom, transparent 57%,blue 43%);
 
     transform-origin: center bottom;
     transform: rotate(32.5deg);
 }
-.togetoge span:after{
+.togetoge-line span:after{
     content: '';
     position: absolute;
     top: 0; left: 0;
     width: 100%; height: 100%;
 
-    background-image: linear-gradient(to bottom,transparent 57%,black 43%);
+    background-image: linear-gradient(to bottom,transparent 57%,blue 43%);
 
     transform-origin: center bottom;
     transform: rotate(-32.5deg);
 }
 
-  .balloon1{
-      position: relative;
-      padding: 20px;
-      width: 80px;
-      height: 80px;
-      line-height: 80px;
-      border-radius: 50%;
-      text-align: center;
-      color: #ffffff;
-      letter-spacing: 0.2em;
-      font-size: 14px;
-      border: 3px #ff9800 solid;
-      background-color: #ff9800;
-  }
-  /* .balloon1::before{
-      content: '';
-      position: absolute;
-      display: block;
-      width: 0;
-      height: 0;
-      left: 2px;
-      bottom: 2px;
-      border-right: 20px solid #ff9800;
-      border-left: 20px solid #ff98FF;
-      border-top: 50px solid red;
-      border-bottom: 10px solid blue;
-      
-      transform: rotate(45deg);
-  } */
-  .balloon1 span{
-      position: absolute;
-      top: calc(50% - 14px); left: calc(50% - 20px);
+/* * * * * * * * * * * * * * * * * * * * * 
+ * トゲトゲ 塗りつぶし
+ * * * * * * * * * * * * * * * * * * * * */
+.togetoge-fill{
+    position: relative;
+    --radius: 25px;   /*　デフォルト 半径 */
+    /* top:calc(var(--radius) * -4) ; */
+    width: calc(var(--radius) * 2);
+    height: calc(var(--radius) * 2);
 
-      width: 0px;
-      height: 0px;
-      --angle: 0deg;
-      transform-origin: center center;
-      transform:  rotate(calc(var(--angle) + 0deg)) translateX(calc(80px * -1));
+    margin:var(--radius);
+}
+/* 半径は変更可 */
+.togetoge-fill[radius="10"]{ --radius: 5px;}
+.togetoge-fill[radius="20"]{ --radius: 10px;}
+.togetoge-fill[radius="30"]{ --radius: 15px;}
+.togetoge-fill[radius="40"]{ --radius: 20px;}
+.togetoge-fill[radius="50"]{ --radius: 25px;}
+.togetoge-fill[radius="60"]{ --radius: 30px;}
+.togetoge-fill[radius="70"]{ --radius: 35px;}
+.togetoge-fill[radius="80"]{ --radius: 40px;}
+.togetoge-fill[radius="90"]{ --radius: 45px;}
+.togetoge-fill[radius="100"]{--radius: 50px;}
 
-      border-right: 40px solid #ff9800;
-      /* border-left: 0px solid #ff98FF; */
-      border-top: 15px solid transparent;
-      border-bottom: 15px solid transparent;
-      
-      transition: 3s;
-      z-index: 1;
-  }
-  .balloon1 span:nth-of-type(1){  --angle: 0deg;   }
-  .balloon1 span:nth-of-type(1){  --angle: 30deg;  }
-  .balloon1 span:nth-of-type(3){  --angle: 60deg;  }
-  .balloon1 span:nth-of-type(4){  --angle: 90deg;  }
-  .balloon1 span:nth-of-type(5){  --angle: 120deg; }
-  .balloon1 span:nth-of-type(6){  --angle: 150deg; }
-  .balloon1 span:nth-of-type(7){  --angle: 180deg; }
-  .balloon1 span:nth-of-type(8){  --angle: 210deg; }
-  .balloon1 span:nth-of-type(9){  --angle: 240deg; }
-  .balloon1 span:nth-of-type(10){ --angle: 270deg; }
-  .balloon1 span:nth-of-type(11){ --angle: 300deg; }
-  .balloon1 span:nth-of-type(12){ --angle: 330deg; }
+.togetoge-fill span{
+    position: absolute;
+    left: calc(var(--radius) * 1 / 3);
+    top: calc(var(--radius) * -1);
+
+    width: 0px;
+    height: 0px;
+    --angle: 0deg;
+    transform-origin: calc(var(--radius) * 2 / 3) calc(var(--radius) * 2);
+    transform:  rotate(calc(var(--angle) + 0deg)) translateY(5px);
+
+    border-right: calc(var(--radius) * 2 / 3) solid transparent;
+    border-bottom: calc(var(--radius) * 2) solid orange;
+    border-left: calc(var(--radius) * 2 / 3) solid transparent;
+    
+    transition: 3s;
+    z-index: -1;
+
+}
+.togetoge-fill span:nth-of-type(1){ --angle: 0deg;  }
+.togetoge-fill span:nth-of-type(2){ --angle: 30deg; }
+.togetoge-fill span:nth-of-type(3){ --angle: 60deg; }
+.togetoge-fill span:nth-of-type(4){ --angle: 90deg; }
+.togetoge-fill span:nth-of-type(5){ --angle: 120deg;}
+.togetoge-fill span:nth-of-type(6){ --angle: 150deg;}
+.togetoge-fill span:nth-of-type(7){ --angle: 180deg;}
+.togetoge-fill span:nth-of-type(8){ --angle: 210deg;}
+.togetoge-fill span:nth-of-type(9){ --angle: 240deg;}
+.togetoge-fill span:nth-of-type(10){--angle: 270deg;}
+.togetoge-fill span:nth-of-type(11){--angle: 300deg;}
+.togetoge-fill span:nth-of-type(12){--angle: 330deg;}
+
+/* * * * * * * * * * * * * * * * * * * * * 
+ * トゲトゲ AI
+ * * * * * * * * * * * * * * * * * * * * */
+.spikes {
+    position: relative;
+    width: 80px;
+    height: 80px;
+    background-color: #fff;
+}
+.spikes::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    background: inherit;
+    clip-path: polygon(
+        50% 0%, 58% 19%, 75% 6.7%, 69% 30%, 93.3% 25%, 81% 43%, 
+        100% 50%, 81% 57%, 93.3% 75%, 69% 70%, 75% 93.3%, 58% 81%, 
+        50% 100%, 42% 81%, 25% 93.3%, 31% 70%, 6.7% 75%, 19% 57%, 
+        0% 50%, 19% 43%, 6.7% 25%, 31% 30%, 25% 6.7%, 42% 19%
+    );
+
+    transform: translate(-50%, -50%);
+    background-color: #000;
+}
+
 
   /* div > div{
       width: 200px;
